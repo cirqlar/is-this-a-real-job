@@ -39,15 +39,15 @@ export const initRoutes = app => {
   app.get('/register', (req, res) => res.render('register'));
   app.get('/post', (req, res) => res.render('userPost'));
   app.get('/jobInvites', renderJobInvitesPage);
-  app.get('/singlepost/:inviteId', renderSinglePostPage);
+  app.get('/post/:inviteId', renderSinglePostPage);
   app.get('/admin', (req, res) => res.render('admin'));
 
   // Edit post endpoint
   app.get('/post/:inviteId/edit', validateInviteId, validateInvite, editInvite);
 
   // All EJS fronted endpoints continue
-  app.get('/admin/users', (req, res) => res.render('users'));
-  app.get('/admin/posts', (req, res) => res.render('posts'));
+  app.get('/admin/users', (req, res) => res.render('admin/users'));
+  app.get('/admin/posts', (req, res) => res.render('admin/posts'));
 
   // All backend API endpoints below -----------------------------------------------------
   // Auth
